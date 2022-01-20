@@ -18,6 +18,7 @@
 		2036C4802798D79A0056D504 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2036C47F2798D79A0056D504 /* RealmManager.swift */; };
 		2094CEDB2798E49D0083EEF0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2094CEDA2798E49D0083EEF0 /* Realm */; };
 		2094CEDD2798E49D0083EEF0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2094CEDC2798E49D0083EEF0 /* RealmSwift */; };
+		2094CEE12798E6C10083EEF0 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094CEE02798E6C10083EEF0 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		2036C47A279871300056D504 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		2036C47C2798740B0056D504 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		2036C47F2798D79A0056D504 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		2094CEE02798E6C10083EEF0 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +69,9 @@
 			children = (
 				2036C46527986A3B0056D504 /* TodoDemoApp.swift */,
 				2036C47327986E690056D504 /* Views */,
+				2094CEDE2798E67A0083EEF0 /* Models */,
 				2036C47627986FA30056D504 /* Components  */,
-				2036C47F2798D79A0056D504 /* RealmManager.swift */,
+				2094CEDF2798E6840083EEF0 /* Managers */,
 				2036C46927986A3D0056D504 /* Assets.xcassets */,
 				2036C46B27986A3D0056D504 /* Preview Content */,
 			);
@@ -100,6 +103,22 @@
 				2036C47C2798740B0056D504 /* AddButton.swift */,
 			);
 			path = "Components ";
+			sourceTree = "<group>";
+		};
+		2094CEDE2798E67A0083EEF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2094CEE02798E6C10083EEF0 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2094CEDF2798E6840083EEF0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2036C47F2798D79A0056D504 /* RealmManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2094CEE12798E6C10083EEF0 /* Task.swift in Sources */,
 				2036C47527986E750056D504 /* TaskView.swift in Sources */,
 				2036C47B279871300056D504 /* AddTaskView.swift in Sources */,
 				2036C46827986A3B0056D504 /* ContentView.swift in Sources */,
