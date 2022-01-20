@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddTaskView: View {
+    @Environment(\.dismiss) var dismiss
     
     @State private var title: String = ""
     
@@ -17,11 +18,13 @@ struct AddTaskView: View {
                 .font(.title)
                 .bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top)
             
     TextField("Enter your task here", text: $title)
                 .textFieldStyle(.roundedBorder)
             Button{
                 print("Task added")
+                dismiss()
             } label: {
                 Text("Add task")
                     .foregroundColor(.white)
@@ -31,11 +34,11 @@ struct AddTaskView: View {
                     .cornerRadius(20)
             }
             Spacer()
-            
         }
         .padding(.top, 40)
         .padding(.horizontal)
         .background(Color(hue: 0.086, saturation: 0.141, brightness: 0.972))
+        .ignoresSafeArea()
     }
 }
 
