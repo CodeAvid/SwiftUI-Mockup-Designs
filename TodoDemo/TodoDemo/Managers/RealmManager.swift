@@ -18,6 +18,8 @@ class RealmManager: ObservableObject{
         getTask()
     }
     
+    // MARK: - Open a new Realm
+    
     func openRealm(){
         do{
             let config = Realm.Configuration(schemaVersion: 1)
@@ -30,6 +32,9 @@ class RealmManager: ObservableObject{
             print("Error opening Realm \(error)")
         }
     }
+    
+    
+    // MARK: - Add Task to Realm
     
     func addTask(taskTitle: String){
         
@@ -48,6 +53,9 @@ class RealmManager: ObservableObject{
         
     }
     
+    
+    // MARK: - Get all Tasks from Realm
+    
     func getTask() {
         let allTask = localRealm?.objects(Task.self).sorted(byKeyPath: "completed")
         tasks = []
@@ -55,6 +63,9 @@ class RealmManager: ObservableObject{
             tasks.append(task)
         }
     }
+    
+    
+    // MARK: - Update Task in Realm
     
     func updateTask(id: ObjectId, completed: Bool){
         if let localRealm = localRealm {
@@ -75,6 +86,8 @@ class RealmManager: ObservableObject{
             }
         }
     }
+    
+    // MARK: - Delete Task in Realm
     
     func deleteTask(id: ObjectId){
         if let localRealm = localRealm {

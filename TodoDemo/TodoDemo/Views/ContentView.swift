@@ -9,23 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var showAddTaskView =  false
+    @State private var realmManager = RealmManager()
     
+    @State private var showAddTaskView =  false
+   
     var body: some View {
         ZStack(alignment: .bottomTrailing){
+            
             TaskView()
-                AddButton()
-                    .padding()
-                    .onTapGesture {
-                        showAddTaskView.toggle()
-                    }
+                .environmentObject(realmManager)
+            
+            AddButton()
+                .padding()
+                .onTapGesture {
+                    showAddTaskView.toggle()
+                }
         }
         .sheet(isPresented: $showAddTaskView){
             AddTaskView()
+                .environmentObject(realmManager)
         }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                .background(Color(hue: 0.086, saturation: 0.141, brightness: 0.972))
-
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+        .background(Color(hue: 0.086, saturation: 0.141, brightness: 0.972))
+        
     }
 }
 
